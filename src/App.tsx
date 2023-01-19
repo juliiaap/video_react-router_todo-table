@@ -1,32 +1,9 @@
-import { todos } from './data/todos';
-import { TodoTable } from './components/TodoTable';
-import { Link, Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom';
-
-export const TodosPage = () => {
-  const { todoId = 0 } = useParams();
-
-  return <>
-    <h1 className="title">Todos Page</h1>
-
-    <TodoTable
-      todos={todos}
-      selectedTodoId={+todoId}
-    />
-  </>;
-};
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
+import { MainNav } from './components/MainNav';
 
 export const App = () => {
   return <>
-    <nav className="navbar is-light px-3">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          <img src="/logo.svg" alt="MA" className="logo" />
-        </Link>
-
-        <Link to="/" className="navbar-item">Home</Link>
-        <Link to="todos" className="navbar-item">Todos</Link>
-      </div>
-    </nav>
+    <MainNav />
 
     <div className="section">
       <Outlet />

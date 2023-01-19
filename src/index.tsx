@@ -2,14 +2,15 @@ import ReactDOM from 'react-dom/client';
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './index.css';
-import { App, TodosPage } from './App';
+import { App } from './App';
+import { TodosPage } from "./pages/TodosPage";
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 const Root = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route path="todos">
+        <Route path="todo">
           <Route index element={<TodosPage />} />
           <Route path=":todoId" element={<TodosPage />} />
         </Route>
